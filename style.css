@@ -1,0 +1,160 @@
+:root{
+  --mint:#bfe3d0;
+  --cream:#f6f1e7;
+  --sand:#e8c98a;
+  --ink:#2f2f2f;
+  --border:#3a3a3a;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:var(--mint);
+  font-family:'Inter', sans-serif;
+  color:var(--ink);
+}
+
+/* ================= WINDOW STYLE ================= */
+.window{
+  background:var(--cream);
+  border:3px solid var(--border);
+  border-radius:12px;
+  box-shadow:6px 6px 0 var(--border);
+  animation:popIn .6s ease forwards;
+}
+
+.window-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 12px;
+  background:#e6dccb;
+  border-bottom:2px solid var(--border);
+  font-family:'VT323', monospace;
+  font-size:20px;
+}
+
+.controls span{
+  display:inline-block;
+  width:14px;
+  height:14px;
+  margin-left:6px;
+  border:2px solid var(--border);
+  border-radius:3px;
+}
+
+/* ================= LAYOUT ================= */
+.container{
+  max-width:1100px;
+  margin:40px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+/* ================= PROFILE ================= */
+.profile{
+  grid-column:1 / -1;
+  display:flex;
+  gap:20px;
+  padding:20px;
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  background-image: url('avatar.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.profile h1{
+  margin:0;
+  font-family:'VT323', monospace;
+  font-size:42px;
+}
+
+.profile h2{
+  margin:4px 0 12px;
+  font-weight:600;
+  font-size:18px;
+}
+
+/* ================= SKILLS ================= */
+.skills ul{
+  list-style:none;
+  padding:20px;
+  margin:0;
+}
+
+.skills li{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.dots span{
+  width:10px;
+  height:10px;
+  margin-left:4px;
+  background:#4e8f72;
+  border-radius:50%;
+  display:inline-block;
+}
+
+/* ================= EXPERIENCE ================= */
+.content{
+  padding:20px;
+}
+
+.job{
+  margin-bottom:16px;
+}
+
+.job h4{
+  margin:0;
+  font-weight:600;
+}
+
+.job small{
+  opacity:.7;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  grid-column:1 / -1;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes popIn{
+  from{
+    transform:scale(.95) translateY(20px);
+    opacity:0;
+  }
+  to{
+    transform:scale(1) translateY(0);
+    opacity:1;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .container{
+    grid-template-columns:1fr;
+  }
+  .profile{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+}
